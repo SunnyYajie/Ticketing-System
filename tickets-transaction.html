@@ -24,10 +24,10 @@
             <div class="row mb-4">
                 <div class="col-lg-3 p-2 col-md-6 col-sm-12">
                     <div class="card text-light" id="s-class" style="background: gold;">
-                        <div class="card-header text-center fs-3 py-1">S Class</div>
+                        <div class="card-header text-center fs-3 py-1 fw-bold">S Class</div>
                         <div class="card-body text">
                             <div class="card-body text d-flex justify-content-around align-items-center py-0">
-                                <i class="bi bi-list-task fw-bold fs-1"></i>
+                                <i class="bi bi-stars fw-bold fs-1 fw-bold"></i>
                                 <h1 class="fw-bold fs-1">3</h1>
                             </div>
                         </div>
@@ -35,10 +35,10 @@
                 </div> <!-- Card End -->
                 <div class="col-lg-3 p-2 col-md-6 col-sm-12">
                     <div class="card text-bg-info text-light">
-                        <div class="card-header text-center fs-3 py-1">A Class</div>
+                        <div class="card-header text-center fs-3 py-1 fw-bold">A Class</div>
                         <div class="card-body text">
                             <div class="card-body text d-flex justify-content-around align-items-center py-0">
-                                <i class="bi bi-pencil-square fw-bold fs-1"></i>
+                                <i class="bi bi-star-fill fw-bold fs-1"></i>
                                 <h1 class="fw-bold fs-1">4</h1>
                             </div>
                         </div>
@@ -46,21 +46,21 @@
                 </div> <!-- Card End -->
                 <div class="col-lg-3 p-2 col-md-6 col-sm-12">
                     <div class="card text-bg-success">
-                        <div class="card-header text-center fs-3 py-1">B Class</div>
+                        <div class="card-header text-center fs-3 py-1 fw-bold">B Class</div>
                         <div class="card-body text">
                             <div class="card-body text d-flex justify-content-around align-items-center py-0">
-                                <i class="bi bi-check-square fw-bold fs-1"></i>
+                                <i class="bi bi-star fw-bold fs-1"></i>
                                 <h1 class="fw-bold fs-1">5</h1>
                             </div>
                         </div>
                     </div>
                 </div><!-- Card End -->
                 <div class="col-lg-3 p-2 col-md-6 col-sm-12">
-                    <div class="card text-bg-secondary">
-                        <div class="card-header text-center fs-3 py-1">Regions</div>
+                    <div class="card text-bg-danger">
+                        <div class="card-header text-center fs-3 py-1 fw-bold">Hot</div>
                         <div class="card-body text">
                             <div class="card-body text d-flex justify-content-around align-items-center py-0">
-                                <i class="bi bi-check-square fw-bold fs-1"></i>
+                                <i class="bi bi-fire fw-bold fs-1"></i>
                                 <h1 class="fw-bold fs-1">5</h1>
                             </div>
                         </div>
@@ -69,64 +69,136 @@
             </div>
         </div>
     </section>
-    <div class="divider mb-3 mx-3"></div>
-    <section class="accordion container-fluid" id="accordion-table-ongoing">
+    <div class="divider mb-4 mx-3"></div>
+    <section class="accordion container-fluid" id="accordion-table-sclass">
         <div class="accordion-item acc-warning">
             <!-- ACC HEADER -->
             <h2 class="accordion-header">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#acc-table-ongoing" aria-expanded="true" aria-controls="acc-table-ongoing" style="background: rgb(206, 175, 0);">
-                <div class="text-light fw-bold">On-Going Tickets</div>
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#acc-table-sclass" aria-expanded="true" aria-controls="acc-table-sclass" style="background: rgb(206, 175, 0);">
+                    <div class="text-light fw-bold">S Class</div>
                 </button>
             </h2>
             <!-- ACC BODY -->
-            <div id="acc-table-ongoing" class="accordion-collapse collapse show" data-bs-parent="#accordion-table-ongoing">
+            <div id="acc-table-sclass" class="accordion-collapse collapse show" data-bs-parent="#accordion-table-sclass">
                 <div class="accordion-body bg">
                     <!-- Table Proper -->
-                    <table class="table table-striped table-responsive-md table-sm table-hover">
-                        <thead class="table-dark text-center">
+                    <table class="table table-striped table-responsive-md table-sm table-hover table-sclass m-0">
+                        <thead class="table-dark">
                         <tr>
-                            <th scope="col">Deck Rank</th>
+                            <th scope="col">Deck No.</th>
                             <th scope="col">Name</th>
                             <th scope="col">Champion Cards</th>
-                            <th scope="col">Epic Cards</th>
-                            <th scope="col">Rare Cards</th>
-                            <th scope="col">Common Cards</th>
-                            <th scope="col">Strong Against</th>
-                            <th scope="col">Weak Against</th>
+                            <th scope="col">Followers</th>
+                            <th scope="col">Spells</th>
+                            <th scope="col">Strongest Against</th>
+                            <th scope="col">Weakest Against</th>
                             <th scope="col">Cost</th>
                             <th scope="col">Regions</th>
-                            <th scope="col">Rarity</th>
-                            <th scope="col">Details</th>
+                            <th scope="col">Tier</th>
+                            <th scope="col" class="text-center">Details</th>
                         </tr>
                         </thead>
-                        <tbody class="text-center">
+                        <tbody>
                         <tr>
-                            <th class="align-middle">TOP 1</th>
-                            <td class="align-middle">Jarvan Shen</td>
-                            <td class="align-middle">3 Jarvan IV<br>3 Shen</td>
-                            <td class="align-middle">4</td>
-                            <td class="align-middle">9</td>
-                            <td class="align-middle">21</td>
-                            <td class="align-middle">Lurk<br>Jax Ornn<br>Ashe<br>LeBlanc<br>Scouts<br>Overwhelm</td>
-                            <td class="align-middle">Poros<br>Teemo Yuumi</td>
-                            <td class="align-middle">27600 Shards</td>
-                            <td class="align-middle">Demacia || Ionia</td>
-                            <td class="align-middle"><span class="badge rounded-pill text-bg-warning me-1">S Class</span></td>
-                            <td class="align-middle"><button class="btn btn-info " data-bs-toggle="modal" data-bs-target="#viewTicketModal">view</button></td>
+                            <!-- Deck Code -->
+                            <td class="align-middle" scope="row">Deck 0001</td>
+                            <!-- Name -->
+                            <td class="align-middle">Gwen Riven</td>
+                            <!-- Champion Cards -->
+                            <td class="align-middle">3 Gwen | 3 Riven</td>
+                            <!-- Followers -->
+                            <td class="align-middle">20</td>
+                            <!-- Spells -->
+                            <td class="align-middle">11</td> 
+                            <!-- Strongest Against -->
+                            <td class="align-middle">N/A</td>
+                            <!-- Weakest Against -->
+                            <td class="align-middle">N/A</td>
+                            <!-- Cost -->
+                            <td class="align-middle">33100 Shards</td>
+                            <!-- Regions -->
+                            <td class="align-middle">
+                                <span class="badge" style="background-color: brown;">Noxus</span>
+                                <span class="badge" style="background-color: rgb(18, 104, 18);">Shadow Isles</span>
+                            </td>
+                            <!-- Rarity -->
+                            <td class="align-middle">
+                                <span class="badge rounded-pill text-bg-warning">S Class</span>
+                                <span class="badge rounded-pill text-bg-danger">Hot</span>
+                            </td>
+                            <!-- Details -->
+                            <td class="align-middle text-center">
+                                <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#viewTicketModal">view</button>
+                                <button class="btn btn-warning edit">Edit</button>
+                                <button class="btn btn-danger delete">Delete</button>
+                            </td>
                         </tr>
                         <tr>
-                            <th class="align-middle">TOP 2</th>
-                            <td class="align-middle">Teemo Yuumi</td>
-                            <td class="align-middle">3 Teemo<br>3 Yuumi</td>
+                            <!-- Deck Code -->
+                            <td class="align-middle" scope="row">Deck 0002</td>
+                            <!-- Name -->
+                            <td class="align-middle">Jinx Kennen</td>
+                            <!-- Champion Cards -->
+                            <td class="align-middle">3 Jinx | 3 Kennen</td>
+                            <!-- Followers -->
+                            <td class="align-middle">19</td>
+                            <!-- Spells -->
+                            <td class="align-middle">15</td> 
+                            <!-- Strongest Against -->
+                            <td class="align-middle">Off-Meta Decks</td>
+                            <!-- Weakest Against -->
+                            <td class="align-middle">Gwen Zed</td>
+                            <!-- Cost -->
+                            <td class="align-middle">22600 Shards</td>
+                            <!-- Regions -->
+                            <td class="align-middle">
+                                <span class="badge" style="background-color: rgb(161, 175, 30);">Bandle City</span>
+                                <span class="badge" style="background-color: rgb(192, 142, 4);">Piltover & Zaun</span>
+                            </td>
+                            <!-- Rarity -->
+                            <td class="align-middle">
+                                <span class="badge rounded-pill text-bg-warning">S Class</span>
+                            </td>
+                            <!-- Details -->
+                            <td class="align-middle text-center">
+                                <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#viewTicketModal">view</button>
+                                <button class="btn btn-warning edit">Edit</button>
+                                <button class="btn btn-danger delete">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <!-- Deck Code -->
+                            <td class="align-middle" scope="row">Deck 0003</td>
+                            <!-- Name -->
+                            <td class="align-middle">Heimer Norra</td>
+                            <!-- Champion Cards -->
+                            <td class="align-middle">3 Heimer | 3 Norra</td>
+                            <!-- Followers -->
                             <td class="align-middle">9</td>
-                            <td class="align-middle">10</td>
-                            <td class="align-middle">15</td>
-                            <td class="align-middle">Poros<br>Janna Nilah<br>Scouts<br>Jarvan Shen</td>
+                            <!-- Spells -->
+                            <td class="align-middle">25</td> 
+                            <!-- Strongest Against -->
+                            <td class="align-middle">Jarvan Shen</td>
+                            <!-- Weakest Against -->
                             <td class="align-middle">Overwhelm</td>
-                            <td class="align-middle">33 300 Shards</td>
-                            <td class="align-middle">Piltover & Zaun || Bandle City</td>
-                            <td class="align-middle"><span class="badge rounded-pill text-bg-warning me-1">S Class</span></td>
-                            <td class="align-middle"><button class="btn btn-info " data-bs-toggle="modal" data-bs-target="#viewTicketModal">view</button></td>
+                            <!-- Cost -->
+                            <td class="align-middle">29400 Shards</td>
+                            <!-- Regions -->
+                            <td class="align-middle">
+                                <span class="badge" style="background-color: rgb(161, 175, 30);">Bandle City</span>
+                                <span class="badge" style="background-color: rgb(18, 104, 18);">Shadow Isles</span>
+                            </td>
+                            <!-- Rarity -->
+                            <td class="align-middle">
+                                <span class="badge rounded-pill text-bg-warning">S Class</span>
+                                <span class="badge rounded-pill text-bg-danger">Hot</span>
+                            </td>
+                            <!-- Details -->
+                            <td class="align-middle text-center">
+                                <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#viewTicketModal">view</button>
+                                <button class="btn btn-warning edit">Edit</button>
+                                <button class="btn btn-danger delete">Delete</button>
+                            </td>
                         </tr>
                         </tbody>
                     </table>
@@ -135,8 +207,474 @@
             </div>
         </div>
     </section>
-    
-
+    <div class="divider2 mb-3 mt-4 mx-3"></div>
+    <section class="accordion container-fluid mt-4" id="accordion-table-sclass">
+        <div class="accordion-item acc-warning">
+            <!-- ACC HEADER -->
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#acc-table-aclass" aria-expanded="true" aria-controls="acc-table-aclass" style="background: rgb(0, 175, 219);">
+                    <div class="text-light fw-bold">A Class</div>
+                </button>
+            </h2>
+            <!-- ACC BODY -->
+            <div id="acc-table-aclass" class="accordion-collapse collapse show" data-bs-parent="#accordion-table-aclass">
+                <div class="accordion-body bg">
+                    <!-- Table Proper -->
+                    <table class="table table-striped table-responsive-md table-sm table-hover table-aclass m-0">
+                        <thead class="table-dark">
+                        <tr>
+                            <th scope="col">Deck No.</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Champion Cards</th>
+                            <th scope="col">Followers</th>
+                            <th scope="col">Spells</th>
+                            <th scope="col">Strongest Against</th>
+                            <th scope="col">Weakest Against</th>
+                            <th scope="col">Cost</th>
+                            <th scope="col">Regions</th>
+                            <th scope="col">Tier</th>
+                            <th scope="col" class="text-center">Details</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data 1 -->
+                        <tr>
+                            <!-- Deck Code -->
+                            <td class="align-middle" scope="row">Deck 0004</td>
+                            <!-- Name -->
+                            <td class="align-middle">Gwen Zed</td>
+                            <!-- Champion Cards -->
+                            <td class="align-middle">3 Gwen | 3 Zed</td>
+                            <!-- Followers -->
+                            <td class="align-middle">23</td>
+                            <!-- Spells -->
+                            <td class="align-middle">11</td> 
+                            <!-- Strongest Against -->
+                            <td class="align-middle">Teemo Yuumi</td>
+                            <!-- Weakest Against -->
+                            <td class="align-middle">Heimer Norra</td>
+                            <!-- Cost -->
+                            <td class="align-middle">24800 Shards</td>
+                            <!-- Regions -->
+                            <td class="align-middle">
+                                <span class="badge" style="background-color: rgb(207,130,155);">Ionia</span>
+                                <span class="badge" style="background-color: rgb(18, 104, 18);">Shadow Isles</span>
+                            </td>
+                            <!-- Rarity -->
+                            <td class="align-middle">
+                                <span class="badge rounded-pill text-bg-info">A Class</span>
+                                <span class="badge rounded-pill text-bg-danger">Hot</span>
+                            </td>
+                            <!-- Details -->
+                            <td class="align-middle text-center">
+                                <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#viewTicketModal">view</button>
+                                <button class="btn btn-warning edit">Edit</button>
+                                <button class="btn btn-danger delete">Delete</button>
+                            </td>
+                        </tr>
+                        <!-- Data 2 -->
+                        <tr>
+                            <!-- Deck Code -->
+                            <td class="align-middle" scope="row">Deck 0005</td>
+                            <!-- Name -->
+                            <td class="align-middle">Jax Ornn</td>
+                            <!-- Champion Cards -->
+                            <td class="align-middle">3 Jax | 3 Ornn</td>
+                            <!-- Followers -->
+                            <td class="align-middle">20</td>
+                            <!-- Spells -->
+                            <td class="align-middle">14</td> 
+                            <!-- Strongest Against -->
+                            <td class="align-middle">Lurk</td>
+                            <!-- Weakest Against -->
+                            <td class="align-middle">Poros</td>
+                            <!-- Cost -->
+                            <td class="align-middle">25100 Shards</td>
+                            <!-- Regions -->
+                            <td class="align-middle">
+                                <span class="badge" style="background-color: rgb(90,184,218);">Freljord</span>
+                                <span class="badge" style="background-color: rgb(191,176,131);">Demacia</span><br>
+                                <span class="badge" style="background-color: rgb(139,117,74);">Runeterran</span>
+                                <span class="badge" style="background-color: rgb(172,82,59);">Bilgewater</span><br>
+                                <span class="badge" style="background-color: rgb(207,130,155);">Ionia</span>
+                            </td>
+                            <!-- Rarity -->
+                            <td class="align-middle">
+                                <span class="badge rounded-pill text-bg-info">A Class</span>
+                            </td>
+                            <!-- Details -->
+                            <td class="align-middle text-center">
+                                <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#viewTicketModal">view</button>
+                                <button class="btn btn-warning edit">Edit</button>
+                                <button class="btn btn-danger delete">Delete</button>
+                            </td>
+                        </tr>
+                        <!-- Data 3 -->
+                        <tr>
+                            <!-- Deck Code -->
+                            <td class="align-middle" scope="row">Deck 0006</td>
+                            <!-- Name -->
+                            <td class="align-middle">Kayle Teemo</td>
+                            <!-- Champion Cards -->
+                            <td class="align-middle">3 Teemo | 3 Kayle</td>
+                            <!-- Followers -->
+                            <td class="align-middle">26</td>
+                            <!-- Spells -->
+                            <td class="align-middle">8</td> 
+                            <!-- Strongest Against -->
+                            <td class="align-middle">Jarvan Shen</td>
+                            <!-- Weakest Against -->
+                            <td class="align-middle">Heimer Norra</td>
+                            <!-- Cost -->
+                            <td class="align-middle">33100 Shards</td>
+                            <!-- Regions -->
+                            <td class="align-middle">
+                                <span class="badge" style="background-color: rgb(161, 175, 30);">Bandle City</span>
+                                <span class="badge" style="background-color: rgb(90,184,218);">Freljord</span>
+                            </td>
+                            <!-- Rarity -->
+                            <td class="align-middle">
+                                <span class="badge rounded-pill text-bg-info">A Class</span>
+                            </td>
+                            <!-- Details -->
+                            <td class="align-middle text-center">
+                                <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#viewTicketModal">view</button>
+                                <button class="btn btn-warning edit">Edit</button>
+                                <button class="btn btn-danger delete">Delete</button>
+                            </td>
+                        </tr>
+                        <!-- Data 4 -->
+                        <tr>
+                            <!-- Deck Code -->
+                            <td class="align-middle" scope="row">Deck 0007</td>
+                            <!-- Name -->
+                            <td class="align-middle">Teemo Yuumi</td>
+                            <!-- Champion Cards -->
+                            <td class="align-middle">3 Teemo | 3 Yuumi</td>
+                            <!-- Followers -->
+                            <td class="align-middle">19</td>
+                            <!-- Spells -->
+                            <td class="align-middle">15</td> 
+                            <!-- Strongest Against -->
+                            <td class="align-middle">Poros</td>
+                            <!-- Weakest Against -->
+                            <td class="align-middle">Heimer Norra</td>
+                            <!-- Cost -->
+                            <td class="align-middle">33300 Shards</td>
+                            <!-- Regions -->
+                            <td class="align-middle">
+                                <span class="badge" style="background-color: rgb(192, 142, 4);">Piltover & Zaun</span>
+                                <span class="badge" style="background-color: rgb(161, 175, 30);">Bandle City</span><br>
+                                <span class="badge" style="background-color: rgb(172,82,59);">Bilgewater</span>
+                            </td>
+                            <!-- Rarity -->
+                            <td class="align-middle">
+                                <span class="badge rounded-pill text-bg-info">A Class</span>
+                            </td>
+                            <!-- Details -->
+                            <td class="align-middle text-center">
+                                <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#viewTicketModal">view</button>
+                                <button class="btn btn-warning edit">Edit</button>
+                                <button class="btn btn-danger delete">Delete</button>
+                            </td>
+                        </tr>
+                        <!-- Data 5 -->
+                        <tr>
+                            <!-- Deck Code -->
+                            <td class="align-middle" scope="row">Deck 0008</td>
+                            <!-- Name -->
+                            <td class="align-middle">Overwhelm</td>
+                            <!-- Champion Cards -->
+                            <td class="align-middle">3 Gnar | 2 Darius</td>
+                            <!-- Followers -->
+                            <td class="align-middle">21</td>
+                            <!-- Spells -->
+                            <td class="align-middle">13</td>
+                            <!-- Strongest Against -->
+                            <td class="align-middle">Poros</td>
+                            <!-- Weakest Against -->
+                            <td class="align-middle">Scouts</td>
+                            <!-- Cost -->
+                            <td class="align-middle">24000 Shards</td>
+                            <!-- Regions -->
+                            <td class="align-middle">
+                                <span class="badge" style="background-color: rgb(90,184,218);">Freljord</span>
+                                <span class="badge" style="background-color: brown;">Noxus</span>
+                            </td>
+                            <!-- Rarity -->
+                            <td class="align-middle">
+                                <span class="badge rounded-pill text-bg-info">A Class</span>
+                            </td>
+                            <!-- Details -->
+                            <td class="align-middle text-center">
+                                <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#viewTicketModal">view</button>
+                                <button class="btn btn-warning edit">Edit</button>
+                                <button class="btn btn-danger delete">Delete</button>
+                            </td>
+                        </tr>
+                        <!-- Data 6 -->
+                        <tr>
+                            <!-- Deck Code -->
+                            <td class="align-middle" scope="row">Deck 0009</td>
+                            <!-- Name -->
+                            <td class="align-middle">Poros</td>
+                            <!-- Champion Cards -->
+                            <td class="align-middle">2 Yuumi | 3 Poro King</td>
+                            <!-- Followers -->
+                            <td class="align-middle">20</td>
+                            <!-- Spells -->
+                            <td class="align-middle">15</td>
+                            <!-- Strongest Against -->
+                            <td class="align-middle">Jax Ornn</td>
+                            <!-- Weakest Against -->
+                            <td class="align-middle">Overwhelm</td>
+                            <!-- Cost -->
+                            <td class="align-middle">24900 Shards</td>
+                            <!-- Regions -->
+                            <td class="align-middle">
+                                <span class="badge" style="background-color: rgb(90,184,218);">Freljord</span>
+                                <span class="badge" style="background-color: rgb(166, 71, 221);">Targon</span><br>
+                                <span class="badge" style="background-color: rgb(161, 175, 30);">Bandle City</span>
+                                <span class="badge" style="background-color: rgb(192, 142, 4);">Piltover & Zaun</span><br>
+                                <span class="badge" style="background-color: rgb(139,117,74);">Runeterran</span>
+                                <span class="badge" style="background-color: brown;">Noxus</span><br>
+                                <span class="badge" style="background-color: rgb(191,176,131);">Demacia</span>
+                            </td>
+                            <!-- Rarity -->
+                            <td class="align-middle">
+                                <span class="badge rounded-pill text-bg-info">A Class</span>
+                            </td>
+                            <!-- Details -->
+                            <td class="align-middle text-center">
+                                <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#viewTicketModal">view</button>
+                                <button class="btn btn-warning edit">Edit</button>
+                                <button class="btn btn-danger delete">Delete</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!-- END-Table Proper -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="divider3 mb-4 mt-4 mx-3"></div>
+    <section class="accordion container-fluid" id="accordion-table-bclass">
+        <div class="accordion-item acc-warning">
+            <!-- ACC HEADER -->
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#acc-table-bclass" aria-expanded="true" aria-controls="acc-table-bclass" style="background: rgb(1, 97, 41);">
+                    <div class="text-light fw-bold">B Class</div>
+                </button>
+            </h2>
+            <!-- ACC BODY -->
+            <div id="acc-table-bclass" class="accordion-collapse collapse show" data-bs-parent="#accordion-table-bclass">
+                <div class="accordion-body bg">
+                    <!-- Table Proper -->
+                    <table class="table table-striped table-responsive-md table-sm table-hover table-bclass m-0">
+                        <thead class="table-dark">
+                        <tr>
+                            <th scope="col">Deck No.</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Champion Cards</th>
+                            <th scope="col">Followers</th>
+                            <th scope="col">Spells</th>
+                            <th scope="col">Strongest Against</th>
+                            <th scope="col">Weakest Against</th>
+                            <th scope="col">Cost</th>
+                            <th scope="col">Regions</th>
+                            <th scope="col">Tier</th>
+                            <th scope="col" class="text-center">Details</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!-- Data 1 -->
+                        <tr>
+                            <!-- Deck Code -->
+                            <td class="align-middle" scope="row">Deck 0010</td>
+                            <!-- Name -->
+                            <td class="align-middle">Ashe LeBlanc</td>
+                            <!-- Champion Cards -->
+                            <td class="align-middle">3 LeBlanc | 3 Ashe</td>
+                            <!-- Followers -->
+                            <td class="align-middle">20</td>
+                            <!-- Spells -->
+                            <td class="align-middle">13</td> 
+                            <!-- Strongest Against -->
+                            <td class="align-middle">Poros</td>
+                            <!-- Weakest Against -->
+                            <td class="align-middle">Janna Nilah</td>
+                            <!-- Cost -->
+                            <td class="align-middle">26300 Shards</td>
+                            <!-- Regions -->
+                            <td class="align-middle">
+                                <span class="badge" style="background-color: rgb(90,184,218);">Freljord</span>
+                                <span class="badge" style="background-color: brown;">Noxus</span><br>
+                                <span class="badge" style="background-color: rgb(191,176,131);">Demacia</span>
+                            </td>
+                            <!-- Rarity -->
+                            <td class="align-middle">
+                                <span class="badge rounded-pill text-bg-success">B Class</span>
+                                <span class="badge rounded-pill text-bg-danger">Hot</span>
+                            </td>
+                            <!-- Details -->
+                            <td class="align-middle text-center">
+                                <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#viewTicketModal">view</button>
+                                <button class="btn btn-warning edit">Edit</button>
+                                <button class="btn btn-danger delete">Delete</button>
+                            </td>
+                        </tr>
+                        <!-- Data 2 -->
+                        <tr>
+                            <!-- Deck Code -->
+                            <td class="align-middle" scope="row">Deck 0011</td>
+                            <!-- Name -->
+                            <td class="align-middle">Lurk</td>
+                            <!-- Champion Cards -->
+                            <td class="align-middle">3 Rek'Sai | 3 Pyke</td>
+                            <!-- Followers -->
+                            <td class="align-middle">26</td>
+                            <!-- Spells -->
+                            <td class="align-middle">8</td> 
+                            <!-- Strongest Against -->
+                            <td class="align-middle">Ashe LeBlanc</td>
+                            <!-- Weakest Against -->
+                            <td class="align-middle">Jax Ornn</td>
+                            <!-- Cost -->
+                            <td class="align-middle">26400 Shards</td>
+                            <!-- Regions -->
+                            <td class="align-middle">
+                                <span class="badge" style="background-color: rgb(172, 146, 59);">Shurima</span>
+                                <span class="badge" style="background-color: rgb(172,82,59);">Bilgewater</span>
+                            </td>
+                            <!-- Rarity -->
+                            <td class="align-middle">
+                                <span class="badge rounded-pill text-bg-success">B Class</span>
+                            </td>
+                            <!-- Details -->
+                            <td class="align-middle text-center">
+                                <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#viewTicketModal">view</button>
+                                <button class="btn btn-warning edit">Edit</button>
+                                <button class="btn btn-danger delete">Delete</button>
+                            </td>
+                        </tr>
+                        <!-- Data 3 -->
+                        <tr>
+                            <!-- Deck Code -->
+                            <td class="align-middle" scope="row">Deck 0012</td>
+                            <!-- Name -->
+                            <td class="align-middle">Jarvan Shen</td>
+                            <!-- Champion Cards -->
+                            <td class="align-middle">3 Shen | 3 Jarvan</td>
+                            <!-- Followers -->
+                            <td class="align-middle">21</td>
+                            <!-- Spells -->
+                            <td class="align-middle">13</td> 
+                            <!-- Strongest Against -->
+                            <td class="align-middle">Lurk</td>
+                            <!-- Weakest Against -->
+                            <td class="align-middle">Heimer Norra</td>
+                            <!-- Cost -->
+                            <td class="align-middle">27600 Shards</td>
+                            <!-- Regions -->
+                            <td class="align-middle">
+                                <span class="badge" style="background-color: rgb(191,176,131);">Demacia</span>
+                                <span class="badge" style="background-color: rgb(207,130,155);">Ionia</span>
+                            </td>
+                            <!-- Rarity -->
+                            <td class="align-middle">
+                                <span class="badge rounded-pill text-bg-success">B Class</span>
+                            </td>
+                            <!-- Details -->
+                            <td class="align-middle text-center">
+                                <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#viewTicketModal">view</button>
+                                <button class="btn btn-warning edit">Edit</button>
+                                <button class="btn btn-danger delete">Delete</button>
+                            </td>
+                        </tr>
+                        <!-- Data 4 -->
+                        <tr>
+                            <!-- Deck Code -->
+                            <td class="align-middle" scope="row">Deck 0013</td>
+                            <!-- Name -->
+                            <td class="align-middle">Scouts</td>
+                            <!-- Champion Cards -->
+                            <td class="align-middle">3 Miss Fortune | 3 Quinn</td>
+                            <!-- Followers -->
+                            <td class="align-middle">25</td>
+                            <!-- Spells -->
+                            <td class="align-middle">9</td> 
+                            <!-- Strongest Against -->
+                            <td class="align-middle">Overwhelm</td>
+                            <!-- Weakest Against -->
+                            <td class="align-middle">Heimer Norra</td>
+                            <!-- Cost -->
+                            <td class="align-middle">32600 Shards</td>
+                            <!-- Regions -->
+                            <td class="align-middle">
+                                <span class="badge" style="background-color: rgb(191,176,131);">Demacia</span>
+                                <span class="badge" style="background-color: rgb(172,82,59);">Bilgewater</span>
+                            </td>
+                            <!-- Rarity -->
+                            <td class="align-middle">
+                                <span class="badge rounded-pill text-bg-success">B Class</span>
+                            </td>
+                            <!-- Details -->
+                            <td class="align-middle text-center">
+                                <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#viewTicketModal">view</button>
+                                <button class="btn btn-warning edit">Edit</button>
+                                <button class="btn btn-danger delete">Delete</button>
+                            </td>
+                        </tr>
+                        <!-- Data 5 -->
+                        <tr>
+                            <!-- Deck Code -->
+                            <td class="align-middle" scope="row">Deck 0014</td>
+                            <!-- Name -->
+                            <td class="align-middle">Janna Nilah</td>
+                            <!-- Champion Cards -->
+                            <td class="align-middle">3 Nilah | 3 Janna</td>
+                            <!-- Followers -->
+                            <td class="align-middle">15</td>
+                            <!-- Spells -->
+                            <td class="align-middle">16</td> 
+                            <!-- Strongest Against -->
+                            <td class="align-middle">Ashe LeBlanc</td>
+                            <!-- Weakest Against -->
+                            <td class="align-middle">Jax Ornn</td>
+                            <!-- Cost -->
+                            <td class="align-middle">30800 Shards</td>
+                            <!-- Regions -->
+                            <td class="align-middle">
+                                <span class="badge" style="background-color: rgb(192, 142, 4);">Piltover & Zaun</span><br>
+                                <span class="badge" style="background-color: rgb(172,82,59);">Bilgewater</span>
+                            </td>
+                            <!-- Rarity -->
+                            <td class="align-middle">
+                                <span class="badge rounded-pill text-bg-success">B Class</span>                                
+                            </td>
+                            <!-- Details -->
+                            <td class="align-middle text-center">
+                                <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#viewTicketModal">view</button>
+                                <button class="btn btn-warning edit">Edit</button>
+                                <button class="btn btn-danger delete">Delete</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!-- END-Table Proper -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-dark">
+        <div class="container-fluid py-2 mt-4">
+            <div class="row justify-content-between">
+                <div class="col text-info fw-bold ps-4"><a href="#">Ticketing System@2023</a></div>
+                <div class="col text-end pe-4"><a href="" class="text-light text-decoration-none">Developed by: <span class="text-primary">Eijay M. Gabrentina</span></a></div>
+            </div>
+        </div>
+    </footer>
     <script src="bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
 </body>
 </html>
