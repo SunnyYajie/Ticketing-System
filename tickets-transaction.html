@@ -16,9 +16,12 @@
     
 </head>
 <body class="bg-dark text-light">
+    <!-- Page Title -->
     <header>
         <div class="display-3 mt-5 mb-5 text-center fw-bolder" id="LOR-title" style="font-family: beufort;"><img class="me-0" src="images/LOR logo.png" style="width: 8rem;">LOR Meta Deck List</div>
     </header>
+    
+    <!-- Tier Cards -->
     <section id="quick-status">
         <div class="container-fluid p-4">
             <div class="row mb-4">
@@ -69,6 +72,15 @@
             </div>
         </div>
     </section>
+    
+    <!-- Add Button -->
+    <div class="container-fluid px-5 py-2">
+        <div class="row mb-5 text-center">
+            <button type="button" class="btn btn-outline-light" id="add-ticket" data-bs-toggle="modal" data-bs-target="#viewModal">Add Deck</button>
+        </div>
+    </div>
+
+    <!-- S Class Table -->
     <section class="accordion container-fluid" id="accordion-table-sclass">
         <div class="accordion-item acc-warning">
             <!-- ACC HEADER -->
@@ -81,7 +93,7 @@
             <div id="acc-table-sclass" class="accordion-collapse collapse show" data-bs-parent="#accordion-table-sclass">
                 <div class="accordion-body bg">
                     <!-- Table Proper -->
-                    <table class="table table-striped table-responsive-md table-sm table-hover table-sclass m-0">
+                    <table class="table table-striped table-responsive-md table-sm table-hover table-sclass m-0" id="table-sclass">
                         <thead class="table-dark">
                         <tr>
                             <th scope="col">Deck No.</th>
@@ -129,7 +141,7 @@
                             <td class="align-middle text-center">
                                 <button class="btn btn-info view-deck" data-bs-toggle="modal" data-bs-target="#viewModal">view</button>
                                 <button class="btn btn-warning edit-deck" data-bs-toggle="modal" data-bs-target="#viewModal">Edit</button>
-                                <button class="btn btn-danger delete-deck">Delete</button>
+                                <button class="btn btn-danger delete-deck" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
                             </td>
                         </tr>
                         <tr>
@@ -162,7 +174,7 @@
                             <td class="align-middle text-center">
                                 <button class="btn btn-info view-deck" data-bs-toggle="modal" data-bs-target="#viewModal">view</button>
                                 <button class="btn btn-warning edit-deck" data-bs-toggle="modal" data-bs-target="#viewModal">Edit</button>
-                                <button class="btn btn-danger delete-deck">Delete</button>
+                                <button class="btn btn-danger delete-deck" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
                             </td>
                         </tr>
                         <tr>
@@ -196,7 +208,7 @@
                             <td class="align-middle text-center">
                                 <button class="btn btn-info view-deck" data-bs-toggle="modal" data-bs-target="#viewModal">view</button>
                                 <button class="btn btn-warning edit-deck" data-bs-toggle="modal" data-bs-target="#viewModal">Edit</button>
-                                <button class="btn btn-danger delete-deck">Delete</button>
+                                <button class="btn btn-danger delete-deck" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
                             </td>
                         </tr>
                         </tbody>
@@ -209,6 +221,7 @@
 
     <div class="divider mb-4 mt-4 mx-3"></div>
 
+    <!-- A Class Table -->
     <section class="accordion container-fluid mt-4" id="accordion-table-sclass">
         <div class="accordion-item acc-warning">
             <!-- ACC HEADER -->
@@ -221,7 +234,7 @@
             <div id="acc-table-aclass" class="accordion-collapse collapse show" data-bs-parent="#accordion-table-aclass">
                 <div class="accordion-body bg">
                     <!-- Table Proper -->
-                    <table class="table table-striped table-responsive-md table-sm table-hover table-aclass m-0">
+                    <table class="table table-striped table-responsive-md table-sm table-hover table-aclass m-0" id="table-aclass">
                         <thead class="table-dark">
                         <tr>
                             <th scope="col">Deck No.</th>
@@ -270,7 +283,7 @@
                             <td class="align-middle text-center">
                                 <button class="btn btn-info view-deck" data-bs-toggle="modal" data-bs-target="#viewModal">view</button>
                                 <button class="btn btn-warning edit-deck" data-bs-toggle="modal" data-bs-target="#viewModal">Edit</button>
-                                <button class="btn btn-danger delete-deck">Delete</button>
+                                <button class="btn btn-danger delete-deck" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
                             </td>
                         </tr>
                         <!-- Data 2 -->
@@ -307,7 +320,7 @@
                             <td class="align-middle text-center">
                                 <button class="btn btn-info view-deck" data-bs-toggle="modal" data-bs-target="#viewModal">view</button>
                                 <button class="btn btn-warning edit-deck" data-bs-toggle="modal" data-bs-target="#viewModal">Edit</button>
-                                <button class="btn btn-danger delete-deck">Delete</button>
+                                <button class="btn btn-danger delete-deck" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
                             </td>
                         </tr>
                         <!-- Data 3 -->
@@ -341,7 +354,7 @@
                             <td class="align-middle text-center">
                                 <button class="btn btn-info view-deck" data-bs-toggle="modal" data-bs-target="#viewModal">view</button>
                                 <button class="btn btn-warning edit-deck" data-bs-toggle="modal" data-bs-target="#viewModal">Edit</button>
-                                <button class="btn btn-danger delete-deck">Delete</button>
+                                <button class="btn btn-danger delete-deck" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
                             </td>
                         </tr>
                         <!-- Data 4 -->
@@ -376,7 +389,7 @@
                             <td class="align-middle text-center">
                                 <button class="btn btn-info view-deck" data-bs-toggle="modal" data-bs-target="#viewModal">view</button>
                                 <button class="btn btn-warning edit-deck" data-bs-toggle="modal" data-bs-target="#viewModal">Edit</button>
-                                <button class="btn btn-danger delete-deck">Delete</button>
+                                <button class="btn btn-danger delete-deck" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
                             </td>
                         </tr>
                         <!-- Data 5 -->
@@ -410,7 +423,7 @@
                             <td class="align-middle text-center">
                                 <button class="btn btn-info view-deck" data-bs-toggle="modal" data-bs-target="#viewModal">view</button>
                                 <button class="btn btn-warning edit-deck" data-bs-toggle="modal" data-bs-target="#viewModal">Edit</button>
-                                <button class="btn btn-danger delete-deck">Delete</button>
+                                <button class="btn btn-danger delete-deck" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
                             </td>
                         </tr>
                         <!-- Data 6 -->
@@ -449,7 +462,7 @@
                             <td class="align-middle text-center">
                                 <button class="btn btn-info view-deck" data-bs-toggle="modal" data-bs-target="#viewModal">view</button>
                                 <button class="btn btn-warning edit-deck" data-bs-toggle="modal" data-bs-target="#viewModal">Edit</button>
-                                <button class="btn btn-danger delete-deck">Delete</button>
+                                <button class="btn btn-danger delete-deck" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
                             </td>
                         </tr>
                         </tbody>
@@ -462,6 +475,7 @@
     
     <div class="divider2 mb-4 mt-4 mx-3"></div>
 
+    <!-- B Class Table -->
     <section class="accordion container-fluid" id="accordion-table-bclass">
         <div class="accordion-item acc-warning">
             <!-- ACC HEADER -->
@@ -474,7 +488,7 @@
             <div id="acc-table-bclass" class="accordion-collapse collapse show" data-bs-parent="#accordion-table-bclass">
                 <div class="accordion-body bg">
                     <!-- Table Proper -->
-                    <table class="table table-striped table-responsive-md table-sm table-hover table-bclass m-0">
+                    <table class="table table-striped table-responsive-md table-sm table-hover table-bclass m-0" id="table-bclass">
                         <thead class="table-dark">
                         <tr>
                             <th scope="col">Deck No.</th>
@@ -524,7 +538,7 @@
                             <td class="align-middle text-center">
                                 <button class="btn btn-info view-deck" data-bs-toggle="modal" data-bs-target="#viewModal">view</button>
                                 <button class="btn btn-warning edit-deck" data-bs-toggle="modal" data-bs-target="#viewModal">Edit</button>
-                                <button class="btn btn-danger delete-deck">Delete</button>
+                                <button class="btn btn-danger delete-deck" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
                             </td>
                         </tr>
                         <!-- Data 2 -->
@@ -558,7 +572,7 @@
                             <td class="align-middle text-center">
                                 <button class="btn btn-info view-deck" data-bs-toggle="modal" data-bs-target="#viewModal">view</button>
                                 <button class="btn btn-warning edit-deck" data-bs-toggle="modal" data-bs-target="#viewModal">Edit</button>
-                                <button class="btn btn-danger delete-deck">Delete</button>
+                                <button class="btn btn-danger delete-deck" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
                             </td>
                         </tr>
                         <!-- Data 3 -->
@@ -592,7 +606,7 @@
                             <td class="align-middle text-center">
                                 <button class="btn btn-info view-deck" data-bs-toggle="modal" data-bs-target="#viewModal">view</button>
                                 <button class="btn btn-warning edit-deck" data-bs-toggle="modal" data-bs-target="#viewModal">Edit</button>
-                                <button class="btn btn-danger delete-deck">Delete</button>
+                                <button class="btn btn-danger delete-deck" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
                             </td>
                         </tr>
                         <!-- Data 4 -->
@@ -626,7 +640,7 @@
                             <td class="align-middle text-center">
                                 <button class="btn btn-info view-deck" data-bs-toggle="modal" data-bs-target="#viewModal">view</button>
                                 <button class="btn btn-warning edit-deck" data-bs-toggle="modal" data-bs-target="#viewModal">Edit</button>
-                                <button class="btn btn-danger delete-deck">Delete</button>
+                                <button class="btn btn-danger delete-deck" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
                             </td>
                         </tr>
                         <!-- Data 5 -->
@@ -660,7 +674,7 @@
                             <td class="align-middle text-center">
                                 <button class="btn btn-info view-deck" data-bs-toggle="modal" data-bs-target="#viewModal">view</button>
                                 <button class="btn btn-warning edit-deck" data-bs-toggle="modal" data-bs-target="#viewModal">Edit</button>
-                                <button class="btn btn-danger delete-deck">Delete</button>
+                                <button class="btn btn-danger delete-deck" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
                             </td>
                         </tr>
                         </tbody>
@@ -715,15 +729,15 @@
                                 <div class="col-4">
                                     <input type="text" class="form-control form-control-sm" name="spells" id="spells" value="69" disabled>
                                 </div>
-                                <!-- Weaknesses -->
-                                <label for="weakness" class="col-form-label col-2 fw-bold text-end text-dark">Weakness: </label>
-                                <div class="col-4">
-                                    <input type="text" class="form-control form-control-sm" name="weakness" id="weakness" value="N/A" disabled>
-                                </div>
                                 <!-- Strengths -->
                                 <label for="strengths" class="col-form-label col-2 fw-bold text-end text-dark">Strengths: </label>
                                 <div class="col-4">
                                     <input type="text" class="form-control form-control-sm" name="strengths" id="strengths" value="N/A" disabled>
+                                </div>
+                                <!-- Weaknesses -->
+                                <label for="weakness" class="col-form-label col-2 fw-bold text-end text-dark">Weakness: </label>
+                                <div class="col-4">
+                                    <input type="text" class="form-control form-control-sm" name="weakness" id="weakness" value="N/A" disabled>
                                 </div>
                                 <!-- Regions -->
                                 <label for="regions" class="col-form-label col-2 fw-bold text-end text-dark">Regions: </label>
@@ -735,19 +749,52 @@
                                 <div class="col-4">
                                     <input type="text" class="form-control form-control-sm" name="cost" id="cost" value="6969" disabled>
                                 </div>
+                                <!-- Deck Number -->
+                                <label for="deckno" class="col-form-label col-2 fw-bold text-end text-dark">Deck No.: </label>
+                                <div class="col-4">
+                                    <input type="text" class="form-control form-control-sm" name="deckno" id="deckno" value="Deck 0000" disabled>
+                                </div>
+                                <!-- Champion Cards -->
+                                <label for="champcards" class="col-form-label col-2 fw-bold text-end text-dark">Champion Cards: </label>
+                                <div class="col-4">
+                                    <input type="text" class="form-control form-control-sm" name="champcards" id="champcards" value="6969" disabled>
+                                </div>
                             </div>
                         </form>
                     </div>    
                 </div>
+                <!-- Modal Footer Buttons -->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-danger d-none" id="modal-btn-demote" data-bs-dismiss="modal">Demote</button>
                     <button type="button" class="btn btn-info d-none" id="modal-btn-promote" data-bs-dismiss="modal">Promote</button>
                     <button type="button" class="btn btn-success d-none" id="modal-btn-save" data-bs-dismiss="modal">Save</button>
+                    <button type="button" class="btn btn-success d-none" id="modal-btn-create" data-bs-dismiss="modal">Create Ticket</button>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Delete Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="delete-label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-danger" id="modal-header">
+                    <h1 class="modal-title fs-5" id="delete-label">Confirm Delete</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-danger" id="delete-prompt">Are you sure you want to delete this record?</div>
+                </div>
+                <!-- Modal Footer Buttons -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-outline-danger" id="modal-btn-delete" data-bs-dismiss="modal">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer class="bg-dark">
         <div class="container-fluid py-2 mt-4">
             <div class="row justify-content-between">
