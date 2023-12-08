@@ -57,6 +57,12 @@ function showHideModalButtons(row, state =''){
     const modalMain = document.querySelector("#viewModal");
     showBtnsDemote = modalMain.querySelector("#modal-btn-create");
     showBtnsDemote.classList.add('d-none');
+    showBtnsDemote = modalMain.querySelector("#modal-btn-demote");
+    showBtnsDemote.classList.add('d-none');
+    showBtnsPromote = modalMain.querySelector("#modal-btn-promote");
+    showBtnsPromote.classList.add('d-none');
+    showBtns = modalMain.querySelector("#modal-btn-save");
+    showBtns.classList.add('d-none');
     if(status.includes("S Class") || status.includes("S Class Hot") ){
         if(state == ""){
             showBtnsDemote = modalMain.querySelector("#modal-btn-demote");
