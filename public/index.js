@@ -39,7 +39,11 @@ function assignRowFieldValues(row){
     let deckno = document.getElementById('deckno');
     deckno.value = columns[0].innerText;
     let champcards = document.getElementById('champcards');
-    champcards.value = columns[2].innerText;
+    champcards.value = columns[2].textContent;
+    let category = document.getElementById('category');
+    category.value = columns[11].innerHTML;
+    let description = document.getElementById('description');
+    description.value = columns[12].innerText;
     if(tier.value == "S Class" || tier.value == "S Class Hot"){
         tier.style = "background: rgb(255, 217, 0);";
     } else if(tier.value == "A Class" || tier.value == "A Class Hot"){
@@ -135,7 +139,7 @@ function clearFieldValues(){
     tier.value = '';
     category.value = '';
     title.value = '';
-    description.innerHTML = '';
+    description.value = '';
     followers.value = '';
     spells.value = '';
     strengths.value = '';
@@ -156,35 +160,61 @@ function clearFieldValues(){
 }
 
 function addTicketRecord(){
-    let modalMain   = document.querySelector("#viewModal");
-    let tier     = document.querySelector('#tier');
+    
+    // let modalMain = document.querySelector("#viewModal");
+    // let tier = document.querySelector('#tier');
     let category     = document.querySelector('#category');
-    let title        = document.querySelector('#title');
     let description     = document.querySelector('#description');
-    let followers        = document.querySelector('#followers');
-    let spells     = document.querySelector('#spells');
-    let strengths        = document.querySelector('#strengths');
-    let weakness     = document.querySelector('#weakness');
-    let regions        = document.querySelector('#regions');
-    let cost        = document.querySelector('#cost');
-    let deckno        = document.querySelector('#deckno');
-    let champcards        = document.querySelector('#champcards');
-
+    let title = "";
+    title = document.querySelector('#title');
+    let followers = "";
+    followers = document.querySelector('#followers');
+    let spells = "";
+    spells = document.querySelector('#spells');
+    let strengths = "";
+    strengths = document.querySelector('#strengths');
+    let weakness = "";
+    weakness = document.querySelector('#weakness');
+    let regions = "";
+    regions = document.querySelector('#regions');
+    let cost = "";
+    cost = document.querySelector('#cost');
+    let deckno = "";
+    deckno = document.querySelector('#deckno');
+    let champcards = "";
+    champcards = document.querySelector('#champcards');
+    
     const tblRow   = document.querySelector("#table-sclass");
     const tblBody  = tblRow.querySelector('tbody');
-
-    let newRow     = tblBody.insertRow();
-    let col1 = newRow.insertCell(0); // Deck No.
-    let col2 = newRow.insertCell(1); // Name
-    let col3 = newRow.insertCell(2); // Champion Cards
-    let col4 = newRow.insertCell(3); // Followers
-    let col5 = newRow.insertCell(4); // Spells
-    let col6 = newRow.insertCell(5); // Strongest
-    let col7 = newRow.insertCell(6); // Weakest
-    let col8 = newRow.insertCell(7); // Cost
-    let col9 = newRow.insertCell(8); // Regions
-    let col10 = newRow.insertCell(9); // Tier
-    let col11 = newRow.insertCell(10); // Details
+    
+    // console.log("Test table");
+    let newRow = tblBody.insertRow()
+    let col1 = "";
+    col1 = newRow.insertCell(0); // Deck No.
+    let col2 = "";
+    col2 = newRow.insertCell(1); // Name
+    let col3 = "";
+    col3 = newRow.insertCell(2); // Champion Cards
+    let col4 = "";
+    col4 = newRow.insertCell(3); // Followers
+    let col5 = "";
+    col5 = newRow.insertCell(4); // Spells
+    let col6 = "";
+    col6 = newRow.insertCell(5); // Strongest
+    let col7 = "";
+    col7 = newRow.insertCell(6); // Weakest
+    let col8 = "";
+    col8 = newRow.insertCell(7); // Cost
+    let col9 = "";
+    col9 = newRow.insertCell(8); // Regions
+    let col10 = "";
+    col10 = newRow.insertCell(9); // Tier
+    let col11 = "";
+    col11 = newRow.insertCell(10); // Details
+    let col12 = "";
+    col12 = newRow.insertCell(11); // Category
+    let col13 = "";
+    col13 = newRow.insertCell(11); // Deck Description
     
     col1.outerHTML = `<td class="align-middle">${deckno.value}</td>`;
     col3.outerHTML = `<td class="align-middle">${champcards.value}</td>`;
@@ -200,7 +230,32 @@ function addTicketRecord(){
     <button class="btn btn-info view-deck" data-bs-toggle="modal" data-bs-target="#viewModal">view</button>
     <button class="btn btn-warning edit-deck" data-bs-toggle="modal" data-bs-target="#viewModal">Edit</button>
     <button class="btn btn-danger delete-deck" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
-</td>`;
+    </td>`;
+    col12.outerHTML = `<td class="align-middle d-none">${category.value}</td>`;
+    col3.outerHTML = `<td class="align-middle d-none">${description.value}</td>`;
+}
+
+function generateToast(bgColor = "", textMessage =""){
+    toastCtr++;
+    let toastHtml = `<div class="toast align-items-center ${bgColor} border-0" role="alert" aria-live="assertive" aria-atomic="true"  id="liveToast${toastCtr}">
+        <div class="d-flex">
+        <div class="toast-body">
+            ${textMessage}
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        </div>`;
+    const toastWrapper = document.querySelector('.toast-container');
+    toastWrapper.innerHTML += toastHtml;
+    const toastMain = document.querySelector('#liveToast'+toastCtr);
+    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastMain);
+    toastBootstrap.show();
+
+    generateToast("text-bg-warning",`Ticket ${newTicketNo} added`);
+    generateToast("text-bg-danger",`Ticket <strong>${ticketNo[0].textContent}</strong> DELETED`);
+    generateToast("text-bg-success",`Ticket <strong>${ticketNo[0].textContent}</strong> tag as COMPLETE`);
+    generateToast("text-bg-warning",`Ticket ${ticketNo[0].textContent} tag as <strong>ONGOING</strong>`);
+    generateToast("text-bg-success",`Ticket ${ticketNo[0].textContent} updated`); 
 }
 
 // Main Content
@@ -285,8 +340,10 @@ document.addEventListener('DOMContentLoaded', function(){
             columns[7].textContent = modalMain.querySelector('#cost').value
             columns[0].textContent = modalMain.querySelector('#deckno').value
             columns[2].textContent = modalMain.querySelector('#champcards').value
+            columns[11].textContent = modalMain.querySelector('#category').value
+            columns[12].textContent = modalMain.querySelector('#description').value
         });
-
+        
         // Add Deck button
         addButton = document.querySelector('#add-ticket');
         addButton.addEventListener('click', function(){       
@@ -296,19 +353,18 @@ document.addEventListener('DOMContentLoaded', function(){
 
             const inputFields = document.querySelectorAll(".form-control");
                 inputFields.forEach(input => {
-                    if(input.id != "tier"){
+                    if(input.id != "tier" && input.id != "regions"){
                         input.removeAttribute("disabled");
                     }
                 });
             
             clearFieldValues();
-            
-            const createButton = document.querySelector("#modal-btn-create");
-            createButton.addEventListener('click', function(){
-                addTicketRecord();
-            });
-
         });
-
+        const createButton = document.querySelector("#modal-btn-create");
+        createButton.addEventListener('click', function(){
+            // console.log("Test2");
+            addTicketRecord("");
+            // clearFieldValues();
+        });
 
 });
