@@ -296,19 +296,15 @@ document.addEventListener('DOMContentLoaded', function(){
 
             const inputFields = document.querySelectorAll(".form-control");
                 inputFields.forEach(input => {
-                    if(input.id != "tier"){
+                    if(input.id != "tier" && input.id != "regions"){
                         input.removeAttribute("disabled");
                     }
                 });
             
             clearFieldValues();
-            
-            const createButton = document.querySelector("#modal-btn-create");
+        });
+        const createButton = document.querySelector("#modal-btn-create");
             createButton.addEventListener('click', function(){
                 addTicketRecord();
             });
-
-        });
-
-
 });
