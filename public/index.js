@@ -1,3 +1,5 @@
+let toastCtr = 0;
+
 function changeModalHeaderColor(status){
     let modalHeader = document.getElementById('modal-header');
     modalHeader.classList.remove('bg-warning','bg-success','bg-success','bg-danger');
@@ -200,7 +202,28 @@ function addTicketRecord(){
     <button class="btn btn-info view-deck" data-bs-toggle="modal" data-bs-target="#viewModal">view</button>
     <button class="btn btn-warning edit-deck" data-bs-toggle="modal" data-bs-target="#viewModal">Edit</button>
     <button class="btn btn-danger delete-deck" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
-</td>`;
+    </td>`;
+
+    generateToast("text-bg-success",`Inputted deck is ADDED`);
+}
+
+/* Generate Dynamic Toast Message*/
+function generateToast(bgColor = "", textMessage = "") {
+    toastCtr++;
+    let toastHtml = `<div class="toast align-items-center ${bgColor} border-0" role="alert" aria-live="assertive" aria-atomic="true"  id="liveToast${toastCtr}">
+                    <div class="d-flex">
+                        <div class="toast-body">
+                            ${textMessage}
+                        </div>
+                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    </div>`;
+    const toastWrapper = document.querySelector('.toast-container');
+    toastWrapper.innerHTML += toastHtml;
+
+    const toastMain = document.querySelector('#liveToast' + toastCtr);
+    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastMain);
+    toastBootstrap.show();
 }
 
 // Main Content
@@ -268,11 +291,13 @@ document.addEventListener('DOMContentLoaded', function(){
                 const confirmDelBtn = modalDelete.querySelector("#modal-btn-delete");
                 confirmDelBtn.addEventListener("click", function(){
                     row.remove();
+                    generateToast("text-bg-danger",`Selected deck is DELETED`);
                 });
             });
         });
 
         // Modal-Save button
+
         mdlSaveButton = document.querySelector('#modal-btn-save');
         mdlSaveButton.addEventListener('click', function(){
             const columns  = activeRow.querySelectorAll('td');
@@ -285,6 +310,8 @@ document.addEventListener('DOMContentLoaded', function(){
             columns[7].textContent = modalMain.querySelector('#cost').value
             columns[0].textContent = modalMain.querySelector('#deckno').value
             columns[2].textContent = modalMain.querySelector('#champcards').value
+            
+            generateToast("text-bg-info",`Edited deck is SAVED`);
         });
 
         // Add Deck button
@@ -293,6 +320,9 @@ document.addEventListener('DOMContentLoaded', function(){
             let modalHeader = document.getElementById('modal-header');
             modalHeader.classList.remove('bg-warning','bg-success','bg-success','bg-danger', 'bg-dark');
             modalHeader.classList.add('bg-dark');
+            // let modalTier = document.getElementById('#tier');
+            // modalTier.classList.remove('bg-warning','bg-success','bg-success','bg-danger', 'bg-dark');
+            // modalTier.classList.add('bg-warning');
 
             const inputFields = document.querySelectorAll(".form-control");
                 inputFields.forEach(input => {

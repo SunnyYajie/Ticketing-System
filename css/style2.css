@@ -29,3 +29,32 @@
 #LOR-title{
     color: rgba(255, 217, 0, 0.836);
 }
+
+.acc-warning {
+    --bs-accordion-btn-bg: #ffc107;
+    --bs-accordion-active-bg: #ffc107;
+}
+
+.acc-secondary {
+    --bs-accordion-btn-bg: #adb5bd;
+    --bs-accordion-active-bg: #adb5bd;
+}
+
+.acc-success {
+    --bs-accordion-btn-bg: #198754;
+    --bs-accordion-active-bg: #198754;
+}
+
+.table-hover {
+    --bs-table-hover-bg: #0dcaf0;
+}
+
+.table-active {
+    --bs-table-active-bg: #0dcaf0;
+}
+
+.bottom-right-toast {
+    position: fixed;
+    bottom: 3rem;
+    right: 1rem;
+}
