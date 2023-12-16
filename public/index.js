@@ -1,4 +1,5 @@
 let toastCtr = 0;
+currentRow = null;
 
 function changeModalHeaderColor(status){
     let modalHeader = document.getElementById('modal-header');
@@ -134,7 +135,7 @@ function clearFieldValues(){
 
 
 
-    tier.value = '';
+    tier.value = 'S Class';
     category.value = '';
     title.value = '';
     description.innerHTML = '';
@@ -146,6 +147,23 @@ function clearFieldValues(){
     cost.value = '';
     deckno.value = '';
     champcards.value = '';
+    if(tier.value == "S Class" || tier.value == "S Class Hot"){
+        tier.style = "background: rgb(255, 217, 0);";
+    } else if(tier.value == "A Class" || tier.value == "A Class Hot"){
+        tier.style = "background: rgb(0, 225, 255);";
+    }
+    else if(tier.value == "B Class" || tier.value == "B Class Hot"){
+        tier.style = "background: rgb(4, 189, 66);";
+    }
+
+    // Date created function for original ticketing system assigned to description instead
+    // let todayDate = new Date();
+    // todayDate.toISOString().split('T')[0];
+    // console.log(todayDate);
+    // description.innerHTML = todayDate;
+    // dueDate = todayDate.setDate(todayDate.getDate() + 7);
+    // dueDate.toISOString().split('T')[0];
+    // category.value = dueDate;
 
     showBtnsDemote = modalMain.querySelector("#modal-btn-demote");
     showBtnsDemote.classList.add('d-none');
@@ -196,7 +214,7 @@ function addTicketRecord(){
     col6.outerHTML = `<td class="align-middle">${strengths.value}</td>`;
     col7.outerHTML = `<td class="align-middle">${weakness.value}</td>`;
     col8.outerHTML = `<td class="align-middle">${cost.value}</td>`;
-    col9.outerHTML = `<td class="align-middle">${regions.value}</td>`;
+    col9.innerHTML = `<td class="align-middle">${regions.value}</td>`;
     col10.outerHTML = `<td class="align-middle"><span class="badge rounded-pill text-bg-warning">S Class</span></td>`
     col11.outerHTML = `<td class="align-middle text-center">
     <button class="btn btn-info view-deck" data-bs-toggle="modal" data-bs-target="#viewModal">view</button>
@@ -218,12 +236,23 @@ function generateToast(bgColor = "", textMessage = "") {
                         <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                     </div>
                     </div>`;
+    // Get the container where the message will be placed
     const toastWrapper = document.querySelector('.toast-container');
+    // Append the toast message to the container
     toastWrapper.innerHTML += toastHtml;
-
+    // Get the id of the toast component to show
     const toastMain = document.querySelector('#liveToast' + toastCtr);
+    // Get the id of the toast component to show
     const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastMain);
+    // Bootstrap method to generate a toast object
     toastBootstrap.show();
+}
+
+function addGlobalEventListener(type, selector, callback){
+    document.addEventListener(type, e => {
+        if(e.target.matches(selector)) callback(e);
+    });
+    // addGlobalEventListener("click", ".delete-deck", e => {});
 }
 
 // Main Content
@@ -243,6 +272,7 @@ document.addEventListener('DOMContentLoaded', function(){
         viewButton = document.querySelectorAll('.view-deck');
         viewButton.forEach(function(button){
             button.addEventListener('click', function(){
+    
                 let modalHeader = document.getElementById('modal-header');
                 modalHeader.classList.remove('bg-warning','bg-success','bg-success','bg-danger','bg-dark');
                 modalHeader.classList.add('bg-primary');
@@ -285,19 +315,20 @@ document.addEventListener('DOMContentLoaded', function(){
         deleteButton = document.querySelectorAll('.delete-deck');
         deleteButton.forEach(function(button){
             button.addEventListener('click', function(){
-                let row = this.parentElement.parentElement;
-                const modalDelete = document.querySelector("#deleteModal");
+                
+                currentRow = this.parentElement.parentElement;
 
-                const confirmDelBtn = modalDelete.querySelector("#modal-btn-delete");
-                confirmDelBtn.addEventListener("click", function(){
-                    row.remove();
-                    generateToast("text-bg-danger",`Selected deck is DELETED`);
-                });
             });
+            const confirmDelBtn = document.querySelector("#modal-btn-delete");
+            confirmDelBtn.addEventListener("click", function(){
+                currentRow.remove();
+                generateToast("text-bg-danger",`Selected deck  is DELETED`);
+            });
+            
         });
+        
 
         // Modal-Save button
-
         mdlSaveButton = document.querySelector('#modal-btn-save');
         mdlSaveButton.addEventListener('click', function(){
             const columns  = activeRow.querySelectorAll('td');
@@ -326,7 +357,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
             const inputFields = document.querySelectorAll(".form-control");
                 inputFields.forEach(input => {
-                    if(input.id != "tier" && input.id != "regions"){
+                    if(input.id != "tier" && input.id != "regions" && input.id != "description"){
                         input.removeAttribute("disabled");
                     }
                 });
@@ -335,6 +366,8 @@ document.addEventListener('DOMContentLoaded', function(){
         });
         const createButton = document.querySelector("#modal-btn-create");
             createButton.addEventListener('click', function(){
+                
                 addTicketRecord();
+                
             });
 });
